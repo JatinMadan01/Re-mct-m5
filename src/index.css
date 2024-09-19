@@ -9,21 +9,20 @@ body, html {
 
 .container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
   width: 80%; 
   max-width: 1200px; 
   gap: 20px; 
 }
 
-.App {
+.App, .image-container {
   background-color: white;
-  padding: 40px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
   text-align: center;
-  width: 100%; 
-  max-width: 500px;
+  width: 400px; 
   font-family: Arial, sans-serif;
 }
 
@@ -54,10 +53,6 @@ div {
   margin-bottom: 20px;
 }
 
-
-.image-container {
-  flex-shrink: 0; 
-}
 
 .image-container img {
   max-width: 100%; 
