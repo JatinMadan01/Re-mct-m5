@@ -1,6 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import './index.css'; 
 
 const App = () => {
   const validationSchema = Yup.object({
@@ -30,81 +31,82 @@ const App = () => {
   });
 
   return (
-    <div className="App">
-      {/* Add the image */}
+    <div className="container">
+      <div className="App">
+        <h1>Email Validation Form</h1>
+        <form onSubmit={formik.handleSubmit}>
+          <div>
+            <label htmlFor="name">Name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.name}
+            />
+            {formik.touched.name && formik.errors.name ? (
+              <div style={{ color: "red" }}>{formik.errors.name}</div>
+            ) : null}
+          </div>
+
+          <div>
+            <label htmlFor="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.email}
+            />
+            {formik.touched.email && formik.errors.email ? (
+              <div style={{ color: "red" }}>{formik.errors.email}</div>
+            ) : null}
+          </div>
+
+          <div>
+            <label htmlFor="password">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.password}
+            />
+            {formik.touched.password && formik.errors.password ? (
+              <div style={{ color: "red" }}>{formik.errors.password}</div>
+            ) : null}
+          </div>
+
+          <div>
+            <label htmlFor="confirmPassword">Confirm Password</label>
+            <input
+              id="confirmPassword"
+              name="confirmPassword"
+              type="password"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.confirmPassword}
+            />
+            {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
+              <div style={{ color: "red" }}>{formik.errors.confirmPassword}</div>
+            ) : null}
+          </div>
+
+          <button type="submit" disabled={!formik.isValid || !formik.dirty}>
+            Submit
+          </button>
+        </form>
+      </div>
+
       <div className="image-container">
         <img
           src="https://m.foolcdn.com/media/dubs/images/smiling_man_in_business_suit_at_laptop_GettyIma.original.jpg"
           alt="Professional Computer"
         />
       </div>
-
-      <h1>Email Validation Form</h1>
-      <form onSubmit={formik.handleSubmit}>
-        <div>
-          <label htmlFor="name">Name</label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.name}
-          />
-          {formik.touched.name && formik.errors.name ? (
-            <div style={{ color: "red" }}>{formik.errors.name}</div>
-          ) : null}
-        </div>
-
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.email}
-          />
-          {formik.touched.email && formik.errors.email ? (
-            <div style={{ color: "red" }}>{formik.errors.email}</div>
-          ) : null}
-        </div>
-
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
-            id="password"
-            name="password"
-            type="password"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.password}
-          />
-          {formik.touched.password && formik.errors.password ? (
-            <div style={{ color: "red" }}>{formik.errors.password}</div>
-          ) : null}
-        </div>
-
-        <div>
-          <label htmlFor="confirmPassword">Confirm Password</label>
-          <input
-            id="confirmPassword"
-            name="confirmPassword"
-            type="password"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.confirmPassword}
-          />
-          {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
-            <div style={{ color: "red" }}>{formik.errors.confirmPassword}</div>
-          ) : null}
-        </div>
-
-        <button type="submit" disabled={!formik.isValid || !formik.dirty}>
-          Submit
-        </button>
-      </form>
     </div>
   );
 };

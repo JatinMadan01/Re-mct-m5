@@ -9,18 +9,22 @@ body, html {
 
 .container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  width: 80%; 
+  max-width: 1200px; 
   gap: 20px; 
 }
+
 .App {
   background-color: white;
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 400px; 
+  width: 100%; 
+  max-width: 500px;
   font-family: Arial, sans-serif;
-  flex-shrink: 1; 
 }
 
 input {
@@ -56,7 +60,7 @@ div {
 }
 
 .image-container img {
-  max-width: 300px; 
+  max-width: 100%; 
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
