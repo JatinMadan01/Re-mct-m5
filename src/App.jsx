@@ -9,7 +9,7 @@ const App = () => {
       .email("Invalid email format")
       .required("Email is required"),
     password: Yup.string()
-      .oneOf(["rishiME@199"], "Password must be 'rishiME@199'")
+      .oneOf(["rishiME@199"], "Password must be 'r****M*****99'")
       .required("Password is required"),
   });
 
