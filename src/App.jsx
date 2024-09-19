@@ -27,7 +27,7 @@ const App = () => {
     <div className="App">
       <div className="image-container">
         <img
-          src="https://via.placeholder.com/350x200.png?text=Professional+Computer+Image"
+          src="https://m.foolcdn.com/media/dubs/images/smiling_man_in_business_suit_at_laptop_GettyIma.original.jpg"
           alt="Professional Computer"
         />
       </div>
