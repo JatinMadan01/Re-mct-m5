@@ -3,10 +3,8 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 const App = () => {
-  // State to handle delayed error messages
   const [errorsVisible, setErrorsVisible] = useState({ name: false, email: false, password: false, confirmPassword: false });
 
-  // Yup validation schema with new fields
   const validationSchema = Yup.object({
     name: Yup.string()
       .required("Name is required"),
@@ -29,15 +27,14 @@ const App = () => {
       confirmPassword: "",
     },
     validationSchema: validationSchema,
-    validateOnBlur: false, // Prevent validation on blur to handle manually
-    validateOnChange: false, // Prevent validation on change to handle manually
+    validateOnBlur: false, 
+    validateOnChange: false, 
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
     },
     validate: (values) => {
-      setErrorsVisible({ name: false, email: false, password: false, confirmPassword: false }); // Reset visibility
+      setErrorsVisible({ name: false, email: false, password: false, confirmPassword: false });
       setTimeout(() => {
-        // Delay error display by 3 seconds
         const errors = validationSchema.validateSync(values, { abortEarly: false }).errors;
         if (errors.name) {
           setErrorsVisible(prev => ({ ...prev, name: true }));
@@ -51,7 +48,7 @@ const App = () => {
         if (errors.confirmPassword) {
           setErrorsVisible(prev => ({ ...prev, confirmPassword: true }));
         }
-      }, 3000);
+      }, 1000);
     },
   });
 
