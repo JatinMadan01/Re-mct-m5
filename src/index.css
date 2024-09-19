@@ -1,14 +1,27 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
 .App {
-  font-family: Arial, sans-serif;
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  margin-top: 50px;
+  width: 350px;
+  font-family: Arial, sans-serif;
 }
 
 input {
   display: block;
   margin: 10px auto;
   padding: 8px;
-  width: 200px;
+  width: 100%;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -20,6 +33,7 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  width: 100%;
 }
 
 button:disabled {
@@ -28,4 +42,17 @@ button:disabled {
 
 div {
   margin-bottom: 20px;
+}
+
+/* Image styling */
+.image-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

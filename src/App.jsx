@@ -3,7 +3,6 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 const App = () => {
-  // Yup validation schema
   const validationSchema = Yup.object({
     email: Yup.string()
       .email("Invalid email format")
@@ -13,7 +12,6 @@ const App = () => {
       .required("Password is required"),
   });
 
-  // Formik setup
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -27,6 +25,12 @@ const App = () => {
 
   return (
     <div className="App">
+      <div className="image-container">
+        <img
+          src="https://via.placeholder.com/350x200.png?text=Professional+Computer+Image"
+          alt="Professional Computer"
+        />
+      </div>
       <h1>Email Validation Form</h1>
       <form onSubmit={formik.handleSubmit}>
         <div>
