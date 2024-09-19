@@ -5,7 +5,7 @@ import * as Yup from "yup";
 const App = () => {
   const validationSchema = Yup.object({
     email: Yup.string()
-      .email("Invalid email format")
+      .email("Invalid email format, It contain @gmail.com")
       .required("Email is required"),
     password: Yup.string()
       .oneOf(["rishiME@199"], "Password must be 'r****M*****99'")
